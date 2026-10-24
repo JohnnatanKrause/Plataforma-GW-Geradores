@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <link rel="icon" type="image/png" href="/assets/img/logos/favicon.png">
+  <meta charset="UTF-8">
+  <title>GW Geradores Ltda - Excelência em Instalações Elétricas</title>
+  <!-- Estilos globais -->
+  <link rel="stylesheet" href="../assets/global.css">
+</head>
+
+<body>
+  <!-- Header carregado dinamicamente -->
+  <div id="header"></div>
+
+  <main>
+    <section class="sobre" id="sobre">
+  <div class="sobre-container">
+    <div class="sobre-texto">
+      <h2>Sobre a GW Geradores Ltda</h2>
+      <p>
+        A GW Geradores Ltda nasceu para transformar desafios de engenharia em resultados concretos.
+        Com foco em inovação, excelência técnica e compromisso com nossos clientes,
+        seguimos construindo uma trajetória marcada pela confiança e pela entrega de valor.
+      </p>
+      
+    </div>
+    <div class="sobre-imagem">
+      <img src="/assets/img/gwgeradores.png" alt="Equipe GW Geradores">
+    </div>
+  </div>
+</section>
+  </main>
+
+  <!-- Footer carregado dinamicamente -->
+  <div id="footer"></div>
+
+  <!-- Inclusão dos partials -->
+  <script>
+    // Carregar header
+    fetch("partials/header-site.html")
+      .then(res => res.text())
+      .then(data => document.getElementById("header").innerHTML = data);
+
+    // Carregar footer
+    fetch("partials/footer-site.html")
+      .then(res => res.text())
+      .then(data => document.getElementById("footer").innerHTML = data);
+  </script>
+</body>

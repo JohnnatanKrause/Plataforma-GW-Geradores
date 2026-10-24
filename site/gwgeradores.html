@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <link rel="icon" type="image/png" href="/assets/img/logos/favicon.png">
+  <meta charset="UTF-8">
+  <title>GW Geradores Ltda - Excelência em Instalações Elétricas</title>
+  <!-- Estilos globais -->
+  <link rel="stylesheet" href="../assets/global.css">
+  <!-- Estilos específicos do site -->
+  <link rel="stylesheet" href="assets/css/site.css">
+</head>
+
+<body>
+  <!-- Header carregado dinamicamente -->
+  <div id="header"></div>
+
+  <main>
+    <!-- Banner inicial em duas colunas -->
+    <section class="banner">
+      <div class="banner-container">
+        <div class="banner-texto">
+          <h1>GW Geradores </h1>
+          <p class="slogan">Excelência em Instalações Elétricas</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sobre -->
+    <section id="sobre">
+      <h2>Sobre a GW Geradores </h2>
+
+      <div class="sobre-container">
+        <div class="sobre-col imagem">
+          <img src="../assets/img/jrgrid.png" alt="Equipe GW Geradores  em ação">
+        </div>
+        <div class="sobre-col texto">
+          <h3>Quem Somos</h3>
+          <h2>Especialistas em Instalações Elétricas</h2>
+          <p>A GW Geradores  é uma empresa focada em manutenção de geradores e Instalações Elétricas, atuando em geração, transmissão e distribuição elétrica.</p>
+          <p>
+        A GW Geradores nasceu para transformar desafios em resultados concretos.
+        Com foco em inovação, excelência técnica e compromisso com nossos clientes,
+        seguimos construindo uma trajetória marcada pela confiança e pela entrega de valor.
+      </p>
+        </div>
+      </div>
+
+      <div class="sobre-full impacto">
+        <blockquote>“Excelência em Instalações Elétricas, com tecnologia e responsabilidade para o futuro.”</blockquote>
+      </div>
+    </section>
+    <!-- Serviços -->
+    <section id="servicos">
+      <h2>Nossos Serviços</h2>
+      <div class="cards">
+        <a href="../site/geracao.html" class="card">
+          <img src="../assets/img/geracaodeenergia.png" alt="Geração de Energia" class="thumb">
+          <h3>Geração de Energia</h3>
+        </a>
+        <a href="../site/solar.html" class="card">
+          <img src="../assets/img/energiasolar.png" alt="Energia Solar" class="thumb">
+          <h3>Energia Solar</h3>
+        </a>
+        <a href="../site/instalacoes.html" class="card">
+          <img src="../assets/img/transmissaodeenergia.png" alt="Instalação, Transmissão e Distribuição" class="thumb">
+          <h3>Instalação, Transmissão e Distribuição</h3>
+        </a>
+        <a href="../site/tech.html" class="card">
+          <img src="../assets/img/tech.png" alt="Serviços Tech" class="thumb">
+          <h3>Eficiência Energética</h3>
+        </a>
+        <a href="../site/consultorias.html" class="card">
+          <img src="../assets/img/consultoria.png" alt="Consultoria Técnica" class="thumb">
+          <h3>Manutenção Estratégica</h3>
+        </a>
+      </div>
+    </section>
+
+    <!-- Diretrizes -->
+    <section id="diretrizes">
+      <h2>Nossas Diretrizes</h2>
+      <div class="cards">
+        <div class="card">
+          <h3 class="titulo-card">Visão</h3>
+          <p>Construir soluções sustentáveis em energia e tecnologia aplicada, garantindo confiabilidade e eficiência.</p>
+        </div>
+        <div class="card">
+          <h3 class="titulo-card">Missão</h3>
+          <p>Otimizar a performance e a segurança dos sistemas elétricos, com foco em inovação e excelência técnica.</p>
+        </div>
+        <div class="card">
+          <h3 class="titulo-card">Valores</h3>
+          <p>Compromisso com clientes, inovação contínua, excelência técnica, ética e transparência, sustentabilidade e responsabilidade social.</p>
+        </div>
+      </div>
+    </section>
+  <!-- Contato -->
+<section id="contato">
+  <h2>Contato</h2>
+  <form class="form" id="formContato" onsubmit="sendWhatsApp(event)">
+    <input type="text" id="nome" placeholder="Nome" required>
+    <input type="tel" id="telefone" placeholder="Telefone" required>
+    <input type="email" id="email" placeholder="E-mail" required>
+    <textarea id="mensagem" placeholder="Mensagem" required></textarea>
+    <button type="submit">Enviar via WhatsApp</button>
+  </form>
+
+  <div class="dados-contato">
+    <p><strong>Técnico Gustavo Wilians</strong></p>
+    <p>R São Gabriel, 1588, Brasilia, Cascavel - PR</p>
+    <p>📞 <a href="tel:+5545999369311">+55 45 9 9936-9311</a></p>
+    <p>✉️ <a href="mailto:gwgeradores@gmail.com">gwgeradores@gmail.com</a></p>
+  </div>
+</section>
+  </main>
+
+  <!-- Footer carregado dinamicamente -->
+  <div id="footer"></div>
+
+  <!-- Scripts globais -->
+  <script src="../assets/global.js"></script>
+  <!-- Scripts específicos do site -->
+  <script src="assets/js/site.js"></script>
+
+  <script>
+    // Carregar header
+    fetch("partials/header-site.html")
+      .then(res => res.text())
+      .then(data => document.getElementById("header").innerHTML = data);
+
+    // Carregar footer
+    fetch("partials/footer-site.html")
+      .then(res => res.text())
+      .then(data => document.getElementById("footer").innerHTML = data);
+  </script>
+</body>
+</html>

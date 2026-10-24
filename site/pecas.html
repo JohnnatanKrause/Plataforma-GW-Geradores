@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <link rel="icon" type="image/png" href="/assets/img/logos/favicon.png">
+  <meta charset="UTF-8">
+  <title>GW Geradores Ltda - Venda de Peças</title>
+  <!-- Estilos globais -->
+  <link rel="stylesheet" href="../assets/global.css">
+  <!-- Estilos específicos do site -->
+  <link rel="stylesheet" href="assets/css/site.css">
+  <style>
+    /* Bloco de cards */
+    .servicos-extra {
+      background: #f9f9f9;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    .servicos-extra h2 {
+      margin-bottom: 20px;
+    }
+    .cards {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .card {
+      flex: 1;
+      min-width: 250px;
+      max-width: 300px;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .card h3 {
+      margin-bottom: 10px;
+      color: #006400;
+    }
+    /* Bloco de atuação */
+    .como-atuamos {
+      padding: 40px 20px;
+      text-align: center;
+    }
+    .como-atuamos ul {
+      list-style: none;
+      padding: 0;
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: left;
+    }
+    .como-atuamos li {
+      margin: 8px 0;
+      padding-left: 20px;
+      position: relative;
+    }
+    .como-atuamos li::before {
+      content: "✔";
+      position: absolute;
+      left: 0;
+      color: #25d366;
+    }
+    .btn-whatsapp {
+      background: #25d366;
+      color: #fff;
+      padding: 12px 24px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      display: inline-block;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header carregado dinamicamente -->
+  <div id="header"></div>
+
+  <main>
+    <!-- Bloco principal em duas colunas -->
+    <section id="pecas" class="servico">
+      <div class="servico-container">
+        <div class="servico-texto">
+          <h2>Venda de Peças e Componentes</h2>
+          <p>Disponibilizamos <strong>peças e componentes originais e multimarcas</strong> para grupos geradores e sistemas elétricos.</p>
+          <p>Nosso portfólio inclui <strong>filtros, óleos, cabos, disjuntores, sensores</strong> e diversos itens essenciais para manutenção e operação confiável.</p>
+          <p>Trabalhamos com fornecedores parceiros de confiança, garantindo <strong>qualidade e disponibilidade rápida</strong>. Oferecemos suporte técnico para identificar a peça correta e orientar na substituição.</p>
+          <a href="#" class="btn-whatsapp" data-servico="Venda de Peças">
+            💬 Precisa de peças e componentes elétricos? Solicite um orçamento!
+          </a>
+        </div>
+        <div class="servico-imagem">
+          <img src="../assets/img/vendas.png" alt="Peças e componentes elétricos">
+        </div>
+      </div>
+    </section>
+
+    <!-- Nova faixa com cards -->
+    <section class="servicos-extra">
+      <h2>Nossas Soluções em Peças</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>Filtros e Óleos</h3>
+          <p>Itens essenciais para manutenção preventiva de grupos geradores.</p>
+        </div>
+        <div class="card">
+          <h3>Cabos e Conectores</h3>
+          <p>Componentes elétricos de alta qualidade para instalações seguras.</p>
+        </div>
+        <div class="card">
+          <h3>Disjuntores e Proteções</h3>
+          <p>Equipamentos de proteção contra sobrecargas e falhas elétricas.</p>
+        </div>
+        <div class="card">
+          <h3>Sensores e Instrumentação</h3>
+          <p>Monitoramento preciso para operação confiável dos sistemas.</p>
+        </div>
+        <div class="card">
+          <h3>Peças Originais</h3>
+          <p>Reposição de componentes originais para maior durabilidade.</p>
+        </div>
+        <div class="card">
+          <h3>Peças Multimarcas</h3>
+          <p>Disponibilidade para diferentes fabricantes e modelos de GMGs.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Nova faixa com lista -->
+    <section class="como-atuamos">
+      <h2>Como Atuamos</h2>
+      <ul>
+        <li>Identificação da peça correta para cada equipamento</li>
+        <li>Suporte técnico especializado na substituição</li>
+        <li>Parcerias com fornecedores confiáveis</li>
+        <li>Entrega rápida e segura</li>
+        <li>Atendimento a indústrias, agronegócio e estabelecimentos urbanos</li>
+      </ul>
+    </section>
+  </main>
+
+  <!-- Footer carregado dinamicamente -->
+  <div id="footer"></div>
+
+  <!-- Scripts globais -->
+  <script src="../assets/global.js"></script>
+  <!-- Scripts específicos do site -->
+  <script src="assets/js/site.js"></script>
+
+  <!-- Inclusão dos partials -->
+  <script>
+    // Carregar header
+    fetch("partials/header-site.html")
+      .then(res => res.text())
+      .then(data => document.getElementById("header").innerHTML = data);
+
+    // Carregar footer
+    fetch("partials/footer-site.html")
+      .then(res => res.text())
+      .then(data => document.getElementById("footer").innerHTML = data);
+
+    // Botão WhatsApp
+    document.querySelectorAll('.btn-whatsapp').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const servico = btn.getAttribute('data-servico');
+        const mensagem = `Olá! Vim do site GW Geradores e tenho interesse em ${servico}.`;
+        const url = `https://wa.me/5545999369311?text=${encodeURIComponent(mensagem)}`;
+        window.open(url, '_blank');
+      });
+    });
+  </script>
+</body>
+</html>

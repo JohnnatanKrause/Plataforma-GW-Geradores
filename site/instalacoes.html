@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <link rel="icon" type="image/png" href="/assets/img/logos/favicon.png">
+  <meta charset="UTF-8">
+  <title>GW Geradores Ltda - Excelência em Instalações Elétricas</title>
+  <!-- Estilos globais -->
+  <link rel="stylesheet" href="../assets/global.css">
+  <!-- Estilos específicos do site -->
+  <link rel="stylesheet" href="assets/css/site.css">
+  <style>
+    /* Bloco de cards */
+    .servicos-extra {
+      background: #f9f9f9;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    .servicos-extra h2 {
+      margin-bottom: 20px;
+    }
+    .cards {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .card {
+      flex: 1;
+      min-width: 250px;
+      max-width: 300px;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .card h3 {
+      margin-bottom: 10px;
+      color: #006400;
+    }
+    /* Bloco de atuação */
+    .como-atuamos {
+      padding: 40px 20px;
+      text-align: center;
+    }
+    .como-atuamos ul {
+      list-style: none;
+      padding: 0;
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: left;
+    }
+    .como-atuamos li {
+      margin: 8px 0;
+      padding-left: 20px;
+      position: relative;
+    }
+    .como-atuamos li::before {
+      content: "✔";
+      position: absolute;
+      left: 0;
+      color: #25d366;
+    }
+    .btn-whatsapp {
+      background: #25d366;
+      color: #fff;
+      padding: 12px 24px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      display: inline-block;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header carregado dinamicamente -->
+  <div id="header"></div>
+
+  <main>
+    <!-- Bloco principal em duas colunas -->
+    <section id="instalacoes" class="servico">
+      <div class="servico-container">
+        <div class="servico-texto">
+          <h2>Instalações Elétricas</h2>
+          <p>Realizamos <strong>projetos e instalações elétricas completas</strong>, desde sistemas industriais de alta potência até soluções comerciais e residenciais.</p>
+          <p>Trabalhamos com <strong>dimensionamento de cargas, painéis de distribuição, sistemas de proteção e automação</strong>, sempre priorizando a confiabilidade e a continuidade operacional.</p>
+          <p>Cada instalação é planejada para atender às demandas específicas do cliente, com foco em <strong>segurança, eficiência e conformidade com normas vigentes</strong>.</p>
+          <a href="#" class="btn-whatsapp" data-servico="Instalações Elétricas">
+            💬 Quer instalar ou modernizar seu sistema elétrico? Fale conosco
+          </a>
+        </div>
+        <div class="servico-imagem">
+          <img src="../assets/img/instalacoes.png" alt="Instalações elétricas industriais">
+        </div>
+      </div>
+    </section>
+
+    <!-- Nova faixa com cards -->
+    <section class="servicos-extra">
+      <h2>Nossas Soluções em Instalações Elétricas</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>Projetos Industriais</h3>
+          <p>Desenvolvimento de sistemas elétricos de alta potência para indústrias e grandes empreendimentos.</p>
+        </div>
+        <div class="card">
+          <h3>Instalações Comerciais</h3>
+          <p>Soluções seguras e eficientes para estabelecimentos comerciais de diferentes portes.</p>
+        </div>
+        <div class="card">
+          <h3>Instalações Residenciais</h3>
+          <p>Projetos personalizados para residências, garantindo segurança e economia.</p>
+        </div>
+        <div class="card">
+          <h3>Automação</h3>
+          <p>Integração de sistemas automatizados para maior controle e eficiência energética.</p>
+        </div>
+        <div class="card">
+          <h3>Painéis de Distribuição</h3>
+          <p>Montagem e adequação de quadros elétricos conforme normas técnicas.</p>
+        </div>
+        <div class="card">
+          <h3>Sistemas de Proteção</h3>
+          <p>Instalação de dispositivos de proteção contra sobrecargas e falhas elétricas.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Nova faixa com lista -->
+    <section class="como-atuamos">
+      <h2>Como Atuamos</h2>
+      <ul>
+        <li>Dimensionamento de cargas e análise de demanda</li>
+        <li>Instalação conforme normas técnicas e regulamentações</li>
+        <li>Modernização e retrofit de sistemas existentes</li>
+        <li>Suporte técnico e manutenção contínua</li>
+        <li>Atendimento a indústrias, comércios e residências</li>
+      </ul>
+    </section>
+  </main>
+
+  <!-- Footer carregado dinamicamente -->
+  <div id="footer"></div>
+
+  <!-- Scripts globais -->
+  <script src="../assets/global.js"></script>
+  <!-- Scripts específicos do site -->
+  <script src="assets/js/site.js"></script>
+
+  <!-- Inclusão dos partials -->
+  <script>
+    // Carregar header
+    fetch("partials/header-site.html")
+      .then(res => res.text())
+      .then(data => document.getElementById("header").innerHTML = data);
+
+    // Carregar footer
+    fetch("partials/footer-site.html")
+      .then(res => res.text())
+      .then(data => document.getElementById("footer").innerHTML = data);
+
+    // Botão WhatsApp
+    document.querySelectorAll('.btn-whatsapp').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const servico = btn.getAttribute('data-servico');
+        const mensagem = `Olá! Vim do site GW Geradores e tenho interesse em ${servico}.`;
+        const url = `https://wa.me/5545999369311?text=${encodeURIComponent(mensagem)}`;
+        window.open(url, '_blank');
+      });
+    });
+  </script>
+</body>
+</html>

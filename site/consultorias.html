@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <link rel="icon" type="image/png" href="/assets/img/logos/favicon.png">
+  <meta charset="UTF-8">
+  <title>GW Geradores Ltda - Consultoria Técnica</title>
+  <!-- Estilos globais -->
+  <link rel="stylesheet" href="../assets/global.css">
+  <!-- Estilos específicos do site -->
+  <link rel="stylesheet" href="assets/css/site.css">
+  <style>
+    /* Bloco de cards */
+    .servicos-extra {
+      background: #f9f9f9;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    .servicos-extra h2 {
+      margin-bottom: 20px;
+    }
+    .cards {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .card {
+      flex: 1;
+      min-width: 250px;
+      max-width: 300px;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .card h3 {
+      margin-bottom: 10px;
+      color: #006400;
+    }
+    /* Bloco de atuação */
+    .como-atuamos {
+      padding: 40px 20px;
+      text-align: center;
+    }
+    .como-atuamos ul {
+      list-style: none;
+      padding: 0;
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: left;
+    }
+    .como-atuamos li {
+      margin: 8px 0;
+      padding-left: 20px;
+      position: relative;
+    }
+    .como-atuamos li::before {
+      content: "✔";
+      position: absolute;
+      left: 0;
+      color: #25d366;
+    }
+    .btn-whatsapp {
+      background: #25d366;
+      color: #fff;
+      padding: 12px 24px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      display: inline-block;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header carregado dinamicamente -->
+  <div id="header"></div>
+
+  <main>
+    <!-- Bloco principal em duas colunas -->
+    <section id="consultoria" class="servico invertido">
+      <div class="servico-container">
+        <div class="servico-texto">
+          <h2>Consultoria Técnica</h2>
+          <p>Oferecemos <strong>consultoria especializada em engenharia elétrica e geração de energia</strong>, apoiando empresas, cooperativas e produtores rurais na tomada de decisões estratégicas.</p>
+          <p>Nossa equipe analisa projetos, identifica riscos e propõe soluções técnicas que aumentam a eficiência e reduzem custos.</p>
+          <p>Atuamos desde o planejamento inicial até a execução, garantindo <strong>conformidade com normas técnicas e regulatórias</strong>. Com experiência acumulada desde 2012, ajudamos nossos clientes a implementar sistemas confiáveis e sustentáveis.</p>
+          <a href="#" class="btn-whatsapp" data-servico="Consultoria Técnica">
+            💬 Precisa de apoio técnico especializado? Conte com a gente!
+          </a>
+        </div>
+        <div class="servico-imagem">
+          <img src="../assets/img/estrategica.png" alt="Consultoria técnica em engenharia elétrica">
+        </div>
+      </div>
+    </section>
+
+    <!-- Nova faixa com cards -->
+    <section class="servicos-extra">
+      <h2>Nossas Soluções em Consultoria</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>Estudos de Viabilidade</h3>
+          <p>Análise técnica e financeira para novos projetos de energia.</p>
+        </div>
+        <div class="card">
+          <h3>Planejamento Estratégico</h3>
+          <p>Definição de soluções sob medida para cada operação.</p>
+        </div>
+        <div class="card">
+          <h3>Gestão de Projetos</h3>
+          <p>Acompanhamento completo desde a concepção até a execução.</p>
+        </div>
+        <div class="card">
+          <h3>Normas e Regulamentações</h3>
+          <p>Garantia de conformidade com padrões técnicos e legais.</p>
+        </div>
+        <div class="card">
+          <h3>Redução de Custos</h3>
+          <p>Soluções que aumentam eficiência e diminuem gastos operacionais.</p>
+        </div>
+        <div class="card">
+          <h3>Suporte Técnico</h3>
+          <p>Equipe especializada para orientar e apoiar decisões críticas.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Nova faixa com lista -->
+    <section class="como-atuamos">
+      <h2>Como Atuamos</h2>
+      <ul>
+        <li>Análise detalhada de projetos e sistemas</li>
+        <li>Identificação de riscos e oportunidades</li>
+        <li>Proposição de soluções técnicas eficientes</li>
+        <li>Planejamento e acompanhamento de execução</li>
+        <li>Suporte contínuo e consultoria personalizada</li>
+      </ul>
+    </section>
+  </main>
+
+  <!-- Footer carregado dinamicamente -->
+  <div id="footer"></div>
+
+  <!-- Scripts globais -->
+  <script src="../assets/global.js"></script>
+  <!-- Scripts específicos do site -->
+  <script src="assets/js/site.js"></script>
+
+  <!-- Inclusão dos partials -->
+  <script>
+    // Carregar header
+    fetch("partials/header-site.html")
+      .then(res => res.text())
+      .then(data => document.getElementById("header").innerHTML = data);
+
+    // Carregar footer
+    fetch("partials/footer-site.html")
+      .then(res => res.text())
+      .then(data => document.getElementById("footer").innerHTML = data);
+
+    // Botão WhatsApp
+    document.querySelectorAll('.btn-whatsapp').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const servico = btn.getAttribute('data-servico');
+        const mensagem = `Olá! Vim do site GW Geradores e tenho interesse em ${servico}.`;
+        const url = `https://wa.me/5545999369311?text=${encodeURIComponent(mensagem)}`;
+        window.open(url, '_blank');
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <link rel="icon" type="image/png" href="/assets/img/logos/favicon.png">
+  <meta charset="UTF-8">
+  <title>GW Geradores Ltda - Energia Solar</title>
+  <!-- Estilos globais -->
+  <link rel="stylesheet" href="../assets/global.css">
+  <!-- Estilos específicos do site -->
+  <link rel="stylesheet" href="assets/css/site.css">
+  <style>
+    /* Bloco de cards */
+    .servicos-extra {
+      background: #f9f9f9;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    .servicos-extra h2 {
+      margin-bottom: 20px;
+    }
+    .cards {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .card {
+      flex: 1;
+      min-width: 250px;
+      max-width: 300px;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .card h3 {
+      margin-bottom: 10px;
+      color: #006400;
+    }
+    /* Bloco de atuação */
+    .como-atuamos {
+      padding: 40px 20px;
+      text-align: center;
+    }
+    .como-atuamos ul {
+      list-style: none;
+      padding: 0;
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: left;
+    }
+    .como-atuamos li {
+      margin: 8px 0;
+      padding-left: 20px;
+      position: relative;
+    }
+    .como-atuamos li::before {
+      content: "✔";
+      position: absolute;
+      left: 0;
+      color: #25d366;
+    }
+    .btn-whatsapp {
+      background: #25d366;
+      color: #fff;
+      padding: 12px 24px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      display: inline-block;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header carregado dinamicamente -->
+  <div id="header"></div>
+
+  <main>
+    <!-- Bloco principal em duas colunas -->
+    <section id="solar" class="servico invertido">
+      <div class="servico-container">
+        <div class="servico-texto">
+          <h2>Energia Solar</h2>
+          <p>Oferecemos <strong>soluções completas em energia solar</strong>, desde projetos e instalação até manutenção e monitoramento de sistemas fotovoltaicos.</p>
+          <p>Atendemos <strong>residências, empresas e indústrias</strong>, garantindo economia, sustentabilidade e independência energética.</p>
+          <p>Nossa equipe realiza <strong>estudos de viabilidade, dimensionamento de sistemas, integração com geração distribuída</strong> e suporte técnico especializado.</p>
+          <a href="#" class="btn-whatsapp" data-servico="Serviços em Energia Solar">
+            ☀️ Quer reduzir sua conta de energia? Fale com a JR Grid!
+          </a>
+        </div>
+        <div class="servico-imagem">
+          <img src="../assets/img/solar.png" alt="Painéis solares em operação">
+        </div>
+      </div>
+    </section>
+
+    <!-- Nova faixa com cards -->
+    <section class="servicos-extra">
+      <h2>Nossas Soluções</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>On-Grid</h3>
+          <p>Reduza sua conta de luz em até 95% com sistemas conectados à rede elétrica.</p>
+        </div>
+        <div class="card">
+          <h3>Off-Grid & Híbridos</h3>
+          <p>Autonomia energética para fazendas e locais remotos, com baterias e integração inteligente.</p>
+        </div>
+        <div class="card">
+          <h3>Projetos Empresariais</h3>
+          <p>Usinas solares e PPAs para empresas que desejam reduzir custos operacionais.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Nova faixa com lista -->
+    <section class="como-atuamos">
+      <h2>Como Atuamos</h2>
+      <ul>
+        <li>Estudo de viabilidade técnica e financeira</li>
+        <li>Dimensionamento personalizado</li>
+        <li>Instalação com equipe especializada</li>
+        <li>Integração com geração distribuída</li>
+        <li>Monitoramento e suporte técnico contínuo</li>
+      </ul>
+    </section>
+  </main>
+
+  <!-- Footer carregado dinamicamente -->
+  <div id="footer"></div>
+
+  <!-- Scripts globais -->
+  <script src="../assets/global.js"></script>
+  <!-- Scripts específicos do site -->
+  <script src="assets/js/site.js"></script>
+
+  <!-- Inclusão dos partials -->
+  <script>
+    // Carregar header
+    fetch("partials/header-site.html")
+      .then(res => res.text())
+      .then(data => document.getElementById("header").innerHTML = data);
+
+    // Carregar footer
+    fetch("partials/footer-site.html")
+      .then(res => res.text())
+      .then(data => document.getElementById("footer").innerHTML = data);
+
+    // Botão WhatsApp
+    document.querySelectorAll('.btn-whatsapp').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const servico = btn.getAttribute('data-servico');
+        const mensagem = `Olá! Vim do site GW Geradores e tenho interesse em ${servico}.`;
+        const url = `https://wa.me/5545999369311?text=${encodeURIComponent(mensagem)}`;
+        window.open(url, '_blank');
+      });
+    });
+  </script>
+</body>
+</html>
